@@ -23,4 +23,11 @@ router.get('/about', (req, res) => {
     res.render('about', {data});
 });
 
+router.get('/services', (req, res) => {
+    const data = {
+        message: 'Services'
+    };
+    res.render('services', {data});
+});
+
 module.exports = router;
