@@ -3,15 +3,24 @@ const router = express.Router();
 
 // Define a route
 router.get('/', (req, res) => {
-    res.render('index');
+    const data = {
+        message: 'Home'
+    };
+    res.render('index', {data});
 });
 
 router.get('/contact', (req, res) => {
-    res.render('contact');
+    const data = {
+        message: 'Contact'
+    };
+    res.render('contact', {data});
 });
 
 router.get('/about', (req, res) => {
-    res.render('about');
+    const data = {
+        message: 'About'
+    };
+    res.render('about', {data});
 });
 
 module.exports = router;
