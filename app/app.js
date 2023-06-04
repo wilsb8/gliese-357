@@ -18,6 +18,10 @@ const publicDir = path.join(__dirname, '..', 'public');
 app.use(express.static(publicDir));
 console.log('Public directory:', publicDir);
 
+// Middleware to parse the request body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Use the router middleware
 app.use('/', router);
 

@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
+
 
 // Define a route
 router.get('/', (req, res) => {
@@ -19,9 +21,8 @@ router.get('/contact', (req, res) => {
 // contact POST route
 
 router.post('/contact', (req, res) => {
-    console.log("Posting to /...");
-    console.log("Data:", req.body);
-  
+    console.log("Posting to /contact...");
+    console.log("Data:", req.body.name);
     // Construct the email content using the form data
     const output = `
       <h2>You have a new contact request</h2>
